@@ -1,10 +1,10 @@
-import path from "node:path";
-import getDirname from "./getDirname.mjs";
+import path from 'node:path'
+import getDirname from './getDirname.mjs'
 
-const dirname = getDirname(import.meta.url);
+const dirname = getDirname(import.meta.url)
 
 function resolveMigrationsPath() {
-  return path.resolve(dirname, "..", "migrations");
+  return path.resolve(dirname, '..', 'migrations')
 }
 
-export default resolveMigrationsPath;
+export default resolveMigrationsPath

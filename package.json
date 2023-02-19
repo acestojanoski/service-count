@@ -6,11 +6,18 @@
   "scripts": {
     "fauna:setup": "node fauna/scripts/setup.mjs",
     "fauna:migrations:add": "node fauna/scripts/addMigration.mjs",
-    "fauna:migrations:run": "node fauna/scripts/runMigrations.mjs"
+    "fauna:migrations:run": "node fauna/scripts/runMigrations.mjs",
+    "lint": "eslint '**/*.{js,mjs}'",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "dotenv": "^16.0.3",
-    "enquirer": "^2.3.6"
+    "enquirer": "^2.3.6",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.8.4",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "faunadb": "^4.8.0",
