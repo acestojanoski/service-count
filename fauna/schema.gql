@@ -1,0 +1,23 @@
+type Namespace @collection(name: "namespaces") {
+  key: String! @unique
+}
+
+type Counter @collection(name: "counters") {
+  key: String!
+  namespace: Namespace!
+  value: Int!
+}
+
+type Query {
+  allNamespaces: [Namespace!]
+
+  allCounters: [Counter!]
+
+  countersByNamespaceKey(namespaceKey: String!): [Counter!]
+    @resolver(name: "counters_by_namespace_key", paginated: true)
+}
+
+type Mutation {
+  incrementCounter(namespaceKey: String!, key: String!): Counter!
+    @resolver(name: "increment_counter")
+}
